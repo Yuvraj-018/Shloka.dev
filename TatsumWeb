@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatsam - The Hindi Society of NSUT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Shiva-inspired color scheme and base styles */
+        :root {
+            --shiva-blue: #1E3A8A;  /* Deep blue like Shiva's throat */
+            --sacred-ash: #E5E7EB; /* Light gray like vibhuti */
+            --moon-white: #F9FAFB; /* Pure white like moon on Shiva's head */
+            --fire-orange: #F59E0B; /* Orange like fire/third eye */
+            --serpent-green: #10B981; /* Green like snakes around neck */
+            --dark-night: #111827;   /* Dark like night of Shiva */
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--moon-white);
+            color: var(--dark-night);
+            transition: var(--transition);
+            line-height: 1.6;
+        }
+
+        /* Trishul-inspired header */
+        header {
+            background: linear-gradient(135deg, var(--shiva-blue), var(--dark-night));
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--fire-orange);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+        }
+
+        .logo-text {
+            color: var(--sacred-ash);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: var(--fire-orange);
+        }
+
+        /* Damru-inspired navigation */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--sacred-ash);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--fire-orange);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--fire-orange);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .language-toggle {
+            margin-left: 2rem;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--sacred-ash);
+            border-radius: 20px;
+            padding: 0.2rem;
+            background-color: rgba(30, 58, 138, 0.5);
+        }
+
+        .language-toggle button {
+            background: none;
+            border: none;
+            color: var(--sacred-ash);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            transition: var(--transition);
+            border-radius: 15px;
+        }
+
+        .language-toggle button.active {
+            background-color: var(--fire-orange);
+            color: var(--dark-night);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--sacred-ash);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .hamburger:hover {
+            color: var(--fire-orange);
+        }
+
+        /* Hero section with cosmic Shiva background */
+        .hero {
+            background: url('tatsumhead2.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--sacred-ash);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(17, 24, 39, 0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--sacred-ash);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--fire-orange);
+            color: var(--dark-night);
+        }
+
+        .btn-primary:hover {
+            background-color: #e68a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--sacred-ash);
+            border: 2px solid var(--sacred-ash);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(245, 158, 11, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(229, 231, 235, 0.2);
+            border-color: var(--fire-orange);
+            color: var(--fire-orange);
+        }
+
+        /* Main content sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--shiva-blue);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fire-orange), var(--serpent-green));
+            border-radius: 2px;
+        }
+
+        /* About Us section with Shiva lingam inspiration */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--sacred-ash);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--fire-orange);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--shiva-blue);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .about-text h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--serpent-green);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--dark-night);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 5px solid var(--sacred-ash);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed var(--fire-orange);
+            border-radius: 15px;
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Events section with Damru pattern */
+        .events-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: var(--sacred-ash);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            border-top: 3px solid var(--shiva-blue);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .event-card:hover::before {
+            opacity: 1;
+        }
+
+        .event-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+
+        .event-details {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+            background-color: var(--sacred-ash);
+        }
+
+        .event-date {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--fire-orange), var(--serpent-green));
+            color: var(--dark-night);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--shiva-blue);
+        }
+
+        .event-description {
+            color: #4B5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .event-link {
+            color: var(--shiva-blue);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .event-link i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .event-link:hover {
+            color: var(--fire-orange);
+        }
+
+        .event-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Members' Corner section with Trishul inspiration */
+        .members-section {
+            background: linear-gradient(135deg, var(--shiva-blue), var(--dark-night));
+            padding: 4rem 0;
+            color: var(--sacred-ash);
+        }
+
+        .members-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .login-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-form h3 {
+            margin-bottom: 1.5rem;
+            color: var(--fire-orange);
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .login-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--serpent-green);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--sacred-ash);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--sacred-ash);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--fire-orange);
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(229, 231, 235, 0.7);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 0.5rem;
+        }
+
+        .remember-me label {
+            color: var(--sacred-ash);
+            font-size: 0.9rem;
+        }
+
+        .resources {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .resources h3 {
+            margin-bottom: 1.5rem;
+            color: var(--fire-orange);
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .resources h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--serpent-green);
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid rgba(245, 158, 11, 0.1);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .resource-item:hover {
+            background-color: rgba(245, 158, 11, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--fire-orange);
+        }
+
+        .resource-item i {
+            font-size: 2rem;
+            color: var(--fire-orange);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .resource-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .resource-item h4 {
+            margin-bottom: 0.8rem;
+            color: var(--sacred-ash);
+        }
+
+        .resource-item p {
+            color: rgba(229, 231, 235, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Blog section with crescent moon inspiration */
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--sacred-ash);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--shiva-blue), var(--serpent-green));
+            color: var(--sacred-ash);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            color: var(--shiva-blue);
+        }
+
+        .blog-excerpt {
+            color: #4B5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #6B7280;
+            font-size: 0.9rem;
+            border-top: 1px dashed #D1D5DB;
+            padding-top: 1rem;
+        }
+
+        /* Gallery section with cosmic dance theme */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 138, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--sacred-ash);
+            font-size: 2rem;
+            background-color: var(--fire-orange);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Newsletter section with sacred fire theme */
+        .newsletter {
+            background: linear-gradient(135deg, var(--shiva-blue), var(--dark-night));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--sacred-ash);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            animation: rotate-fire 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate-fire {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--sacred-ash);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: rgba(229, 231, 235, 0.9);
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--sacred-ash);
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 2px var(--fire-orange);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(229, 231, 235, 0.7);
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--fire-orange), var(--serpent-green));
+            color: var(--dark-night);
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer with cosmic Shiva theme */
+        footer {
+            background-color: var(--dark-night);
+            color: var(--sacred-ash);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: rgba(229, 231, 235, 0.8);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--sacred-ash);
+            background-color: rgba(245, 158, 11, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .social-links a:hover {
+            background-color: var(--fire-orange);
+            color: var(--dark-night);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--fire-orange);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--serpent-green);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(229, 231, 235, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--fire-orange);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: rgba(229, 231, 235, 0.8);
+        }
+
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: var(--fire-orange);
+            min-width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(245, 158, 11, 0.2);
+            color: rgba(229, 231, 235, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Third eye focus mode button */
+        .focus-mode-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--fire-orange), var(--shiva-blue));
+            color: var(--sacred-ash);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .focus-mode-btn:hover {
+            transform: scale(1.1) rotate(30deg);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Focus mode styles */
+        .focus-mode {
+            --shiva-blue: #1E3A8A;
+            --sacred-ash: #F3F4F6;
+            --moon-white: #FFFFFF;
+            --fire-orange: #D97706;
+            --serpent-green: #065F46;
+            --dark-night: #111827;
+            background-color: #F9FAFB;
+        }
+
+        .focus-mode header,
+        .focus-mode .members-section,
+        .focus-mode .newsletter {
+            background: linear-gradient(135deg, var(--shiva-blue), #1E40AF);
+        }
+
+        .focus-mode .focus-mode-btn {
+            background: linear-gradient(135deg, var(--serpent-green), var(--shiva-blue));
+        }
+
+        /* Responsive design - Cosmic Shiva's adaptability */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark-night);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+                border-top: 1px solid var(--fire-orange);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .language-toggle {
+                margin-left: 1rem;
+                order: -1;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .members-container {
+                flex-direction: column;
+            }
+
+            .login-form, .resources {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .event-card, .blog-card {
+                min-width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Trishul-inspired design -->
+    <header>
+        <div class="logo">
+            <img src="TATSAM-1.png" alt="Tatsam Logo">
+            <div class="logo-text">
+                तत्सम
+                <span>The Hindi Society of NSUT</span>
+            </div>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#members">Members' Corner</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+            
+            <div class="language-toggle">
+                <button id="enBtn" class="active">EN</button>
+                <button id="hiBtn">HI</button>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>हिंदी साहित्य की सेवा में</h1>
+            <p>Promoting Hindi literature and culture at NSUT through creative expression and intellectual discourse</p>
+            <div class="cta-buttons">
+                <a href="#events" class="btn btn-primary">Upcoming Events</a>
+                <a href="#members" class="btn btn-secondary">Join Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>Tatsam - The Hindi Society of NSUT is dedicated to preserving and promoting Hindi language and literature in the academic environment of Netaji Subhas University of Technology. We strive to create a platform for students to express themselves creatively in Hindi and explore the rich cultural heritage of India.</p>
+                
+                <h3>Our Vision</h3>
+                <p>To establish Hindi as a vibrant medium of intellectual and creative expression among the student community, bridging the gap between traditional literature and contemporary thought.</p>
+                
+                <h3>Activities</h3>
+                <p>We organize poetry recitations, debates, workshops, literary competitions, and cultural events throughout the academic year, providing opportunities for students to showcase their talents in Hindi.</p>
+            </div>
+            
+            <div class="about-image">
+                <img src="tatsumhead.jpg" alt="Tatsam Society Members">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="container">
+        <div class="section-title">
+            <h2>Upcoming Events</h2>
+        </div>
+        
+        <div class="events-container">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="tatsumorg.jpg" alt="Hackathon">
+                </div>
+                <div class="event-details">
+                    <span class="event-date">04 Apr 2025</span>
+                    <h3 class="event-title">श्लोक डिकोड</h3>
+                    <p class="event-description">Join us for an Amazing hackathon where coders join from across the country.</p>
+                    <a href="#" class="event-link">Register Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Debate Competition">
+                </div>
+                <div class="event-details">
+                    <span class="event-date">22 May 2025</span>
+                    <h3 class="event-title">हिंदी वाद-विवाद प्रतियोगिता</h3>
+                    <p class="event-description">Annual inter-college Hindi debate competition on contemporary social issues.</p>
+                    <a href="#" class="event-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Workshop">
+                </div>
+                <div class="event-details">
+                    <span class="event-date">5 Jun 2025</span>
+                    <h3 class="event-title">सृजनात्मक लेखन कार्यशाला</h3>
+                    <p class="event-description">Creative writing workshop conducted by noted Hindi authors and journalists.</p>
+                    <a href="#" class="event-link">Register Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members' Corner Section -->
+    <section id="members" class="members-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Members' Corner</h2>
+            </div>
+            
+            <div class="members-container">
+                <div class="login-form">
+                    <h3>Member Login</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter your password">
+                        </div>
+                        <div class="form-actions">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <p style="margin-top: 1rem;">Not a member yet? <a href="#" style="color: var(--green);">Join Now</a></p>
+                </div>
+                
+                <div class="resources">
+                    <h3>Resources</h3>
+                    <div class="resource-list">
+                        <div class="resource-item">
+                            <i class="fas fa-book"></i>
+                            <h4>Literary Archives</h4>
+                            <p>Access our collection of Hindi literature and member contributions.</p>
+                        </div>
+                        <div class="resource-item">
+                            <i class="fas fa-video"></i>
+                            <h4>Event Recordings</h4>
+                            <p>Watch recordings of past events and guest lectures.</p>
+                        </div>
+                        <div class="resource-item">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Membership Docs</h4>
+                            <p>Download important documents and forms for members.</p>
+                        </div>
+                        <div class="resource-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Discussion Forum</h4>
+                            <p>Participate in discussions with fellow members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="container">
+        <div class="section-title">
+            <h2>Latest Blog Posts</h2>
+        </div>
+        
+        <div class="blog-container">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Blog Post">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">Literature</span>
+                    <h3 class="blog-title">हिंदी साहित्य में आधुनिकता की अवधारणा</h3>
+                    <p class="blog-excerpt">आधुनिक हिंदी साहित्य के विकास और उसके विभिन्न पहलुओं पर एक विस्तृत विवेचन...</p>
+                    <div class="blog-meta">
+                        <span>By Rahul Sharma</span>
+                        <span>Oct 5, 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Blog Post">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">Poetry</span>
+                    <h3 class="blog-title">छायावादी कविता का समकालीन प्रभाव</h3>
+                    <p class="blog-excerpt">छायावाद के प्रमुख कवियों और उनकी रचनाओं का आज के समय में क्या महत्व है...</p>
+                    <div class="blog-meta">
+                        <span>By Priya Singh</span>
+                        <span>Sep 28, 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Blog Post">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">Event Recap</span>
+                    <h3 class="blog-title">वार्षिक कवि सम्मेलन 2023: एक संस्मरण</h3>
+                    <p class="blog-excerpt">इस वर्ष के कवि सम्मेलन के कुछ यादगार पल और प्रतिभागियों के अनुभव...</p>
+                    <div class="blog-meta">
+                        <span>By Amit Kumar</span>
+                        <span>Sep 15, 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container">
+        <div class="section-title">
+            <h2>Gallery</h2>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="tatsum1.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum2.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum3.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum4.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum5.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum8.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum6.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tatsum7.jpg" alt="Event Photo">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest events, blog posts, and society activities delivered directly to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="TATSAM-1.png" alt="Tatsam Logo">
+                    </div>
+                    <p>Tatsam - The Hindi Society of NSUT is dedicated to promoting Hindi language and literature among students through various cultural and literary activities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#members">Membership</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Literary Archives</a></li>
+                        <li><a href="#">Event Recordings</a></li>
+                        <li><a href="#">Writing Guides</a></li>
+                        <li><a href="#">Recommended Reading</a></li>
+                        <li><a href="#">Member Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Netaji Subhas University of Technology, Delhi, India</p>
+                    <p><i class="fas fa-envelope"></i> tatsam@nsut.ac.in</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Tatsam - The Hindi Society of NSUT. All Rights Reserved.</p>
+            </div>
+        </footer>
+    
+        <!-- Focus Mode Button (Shiva's Third Eye) -->
+        <button class="focus-mode-btn" title="Toggle Focus Mode">
+            <i class="fas fa-eye"></i>
+        </button>
+        <script>
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+    
+            // Language toggle
+            const langButtons = document.querySelectorAll('.language-toggle button');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    // Here you would add language change functionality
+                });
+            });
+    
+            // Focus mode toggle (Shiva's third eye)
+            const focusModeBtn = document.querySelector('.focus-mode-btn');
+            
+            focusModeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('focus-mode');
+                focusModeBtn.innerHTML = document.body.classList.contains('focus-mode') ? 
+                    '<i class="fas fa-eye-slash"></i>' : '<i class="fas fa-eye"></i>';
+            });
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if(navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+            // Language toggle functionality
+const enBtn = document.getElementById('enBtn');
+const hiBtn = document.getElementById('hiBtn');
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lang = getCookie('lang') || 'en';
+    switchLanguage(lang);
+});
+
+enBtn.addEventListener('click', function() {
+    switchLanguage('en');
+    setCookie('lang', 'en', 30);
+});
+
+hiBtn.addEventListener('click', function() {
+    switchLanguage('hi');
+    setCookie('lang', 'hi', 30);
+});
+
+function switchLanguage(lang) {
+    // Hide all language elements
+    document.querySelectorAll('[lang]').forEach(el => {
+        el.style.display = 'none';
+    });
+    
+    // Show elements for selected language
+    const elementsToShow = document.querySelectorAll(`[lang="${lang}"]`);
+    if (elementsToShow.length > 0) {
+        elementsToShow.forEach(el => {
+            el.style.display = 'inline';
+        });
+    } else {
+        // Fallback to English if no Hindi content exists
+        document.querySelectorAll('[lang="en"]').forEach(el => {
+            el.style.display = 'inline';
+        });
+        lang = 'en';
+    }
+    
+    // Update button states
+    if (lang === 'en') {
+        enBtn.classList.add('active');
+        hiBtn.classList.remove('active');
+    } else {
+        enBtn.classList.remove('active');
+        hiBtn.classList.add('active');
+    }
+}
+
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookies = decodedCookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+        </script>
+    </body>
+    </html>
